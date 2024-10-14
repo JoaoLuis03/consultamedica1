@@ -14,9 +14,9 @@ spring:
       path: /h2-console
       enabled: 'true'
   datasource:
-    password: ''
+    password: '123'
     driver-class-name: org.h2.Driver
     username: sa
-    url: jdbc:h2:mem:marcasus
+    url: jdbc:h2:mem:banco
 server:
   port: ${port:8080}
