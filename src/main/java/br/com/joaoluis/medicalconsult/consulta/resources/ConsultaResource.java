@@ -18,15 +18,13 @@ public class ConsultaResource {
 
     @PostMapping
     public ResponseEntity<Consulta> cadastrarConsulta(@RequestBody Consulta consulta){
-        // Jeito do professor
+
         Consulta novaConsulta = consultaService.cadastrarConsulta(consulta);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
                 .buildAndExpand(novaConsulta.getIdConsulta()).toUri();
         return ResponseEntity.created(uri).body(novaConsulta);
 
-        // Meu jeito
-//        Consulta novaConsulta = consultaService.cadastrarConsulta(consulta);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(novaConsulta);
+
     }
 
     @GetMapping
